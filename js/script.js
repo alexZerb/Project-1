@@ -13,23 +13,36 @@ project 1 - A Random Quote Generator
 
 const quotes = [
   {
-    quote: 'this is quote 1', 
-    source: 'alex paul, 1999'},
+    quote: "You miss 100% of the shots you don't take.",
+    source: 'Wayne Gretzky',
+    year: '1991'
+  },
   {
-    quote: 'this is quote 2', 
-    source: 'hanna may, 2000'},
+    quote: "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you.", 
+    source: 'Derek Jeter', 
+    year: '1996'
+  },
   {
-    quote: 'this is quote 3', 
-    source: 'zac efron, high school musical 2'},
+    quote: "The wall is your mind playing tricks on you. You just need to say, 'One more step, I can do this. I have more in me.' You'll be so proud of yourself once you push pass your threshold.", 
+    source: 'Kerry Walsh, American Beach Volleyball Player'
+  },
   {
-    quote: 'this is quote 4', 
-    source: 'vanessa hudgens, high school musical'},
+    quote: 'If you do not believe in yourself no one will do it for you.', 
+    source: 'Kobe Bryant, American Basketball Player'
+  },
   {
-    quote: 'this is quote 5', 
-    source: 'alex paul, 1989'},
+    quote: 'The greatest thing about tomorrow is, I will be better than I am today', 
+    source: 'Tiger Woods, Professional Golfer'
+  },
   {
-    quote: 'this is quote 6', 
-    source: 'alex paul, 1979'}
+    quote: "Achievement is largely the product of steadily raising one's level of aspiration and expectation.",
+    source: 'Jack Nicklaus, Professional Golfer', 
+    
+  },
+  {
+    quote: "It doesn't matter what your background is or where you come from, if you have dreams and goals, that's all that matters.",
+    source: 'Serena Williams, Professional Tennis Player'
+  }
 ];
 
 /***
@@ -37,11 +50,10 @@ const quotes = [
 ***/
 
 function getRandomQuote () {
-  let num = Math.floor(Math.random() * quotes.length);
-  return quotes[num];
+  let randomNum = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNum];
 } 
 
-console.log(getRandomQuote());
 
 
 
@@ -51,9 +63,13 @@ console.log(getRandomQuote());
 ***/
 
 
+
+
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// document.getElementById('load-quote').addEventListener("click", printQuote, false);
