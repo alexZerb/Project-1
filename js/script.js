@@ -15,34 +15,42 @@ const quotes = [
   {
     quote: "You miss 100% of the shots you don't take.",
     source: 'Wayne Gretzky',
+    citation: 'NHL Legend',
     year: '1991'
   },
   {
     quote: "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you.", 
     source: 'Derek Jeter', 
+    citation: 'MLB Legend',
     year: '1996'
   },
   {
     quote: "The wall is your mind playing tricks on you. You just need to say, 'One more step, I can do this. I have more in me.' You'll be so proud of yourself once you push pass your threshold.", 
-    source: 'Kerry Walsh, American Beach Volleyball Player'
+    source: 'Kerry Walsh', 
+    citation: 'FIVB Legend',
   },
   {
     quote: 'If you do not believe in yourself no one will do it for you.', 
-    source: 'Kobe Bryant, American Basketball Player'
+    source: 'Kobe Bryant', 
+    citation: 'NBA Legend',
   },
   {
     quote: 'The greatest thing about tomorrow is, I will be better than I am today', 
-    source: 'Tiger Woods, Professional Golfer'
+    source: 'Tiger Woods', 
+    citation: 'PGA Legend',
   },
   {
     quote: "Achievement is largely the product of steadily raising one's level of aspiration and expectation.",
-    source: 'Jack Nicklaus, Professional Golfer', 
+    source: 'Jack Nicklaus', 
+    citation: 'PGA Legend', 
     
   },
   {
     quote: "It doesn't matter what your background is or where you come from, if you have dreams and goals, that's all that matters.",
-    source: 'Serena Williams, Professional Tennis Player'
+    source: 'Serena Williams', 
+    citation: 'WTA Legend',
   }
+
 ];
 
 /***
@@ -50,19 +58,32 @@ const quotes = [
 ***/
 
 function getRandomQuote () {
-  let randomNum = Math.floor(Math.random() * quotes.length);
-  return quotes[randomNum];
+  let randomQuote = Math.floor(Math.random() * quotes.length);
+  return quotes[randomQuote];
 } 
-
-
-
-
 
 /***
  * `printQuote` function
 ***/
 
 
+function printQuote(getRandomQuote) {
+  let gRQ = getRandomQuote(); 
+  html += `
+    <p class='quote'>${rQ.quote}</p>
+    <p class='source'>${rQ.source}
+  `;
+//conditional statement to add citation and year
+  if (gRQ.citation) {
+    html += `<span class='citation'>${gRQ.citation}</span>`;
+  }
+  if (gRQ.year) {
+    html += `<span class='year'>${gRQ.year}</span>`;
+  }
+    `</p>`
+  document.getElementById('quote-box').innerHTML = html;
+
+  }
 
 
 
@@ -72,4 +93,4 @@ function getRandomQuote () {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-// document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
