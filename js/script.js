@@ -66,19 +66,20 @@ function getRandomQuote () {
  * `printQuote` function
 ***/
 
+let html= '';
 
-function printQuote(getRandomQuote) {
-  let gRQ = getRandomQuote(); 
+function printQuote() {
+  let phrase = getRandomQuote(); 
   html += `
-    <p class='quote'>${rQ.quote}</p>
-    <p class='source'>${rQ.source}
+    <p class='quote'>${phrase.quote}</p>
+    <p class='source'>${phrase.source}
   `;
 //conditional statement to add citation and year
-  if (gRQ.citation) {
-    html += `<span class='citation'>${gRQ.citation}</span>`;
+  if (phrase.citation) {
+    html += `<span class='citation'>${phrase.citation}</span>`;
   }
-  if (gRQ.year) {
-    html += `<span class='year'>${gRQ.year}</span>`;
+  if (phrase.year) {
+    html += `<span class='year'>${phrase.year}</span>`;
   }
     `</p>`
   document.getElementById('quote-box').innerHTML = html;
