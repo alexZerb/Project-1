@@ -66,11 +66,10 @@ function getRandomQuote () {
  * `printQuote` function
 ***/
 
-let html= '';
 
 function printQuote() {
   let phrase = getRandomQuote(); 
-  html += `
+  let html = `
     <p class='quote'>${phrase.quote}</p>
     <p class='source'>${phrase.source}
   `;
