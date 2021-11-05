@@ -66,7 +66,6 @@ function getRandomQuote () {
  * `printQuote` function
 ***/
 
-
 function printQuote() {
   let phrase = getRandomQuote(); 
   let html = `
@@ -81,12 +80,10 @@ function printQuote() {
     html += `<span class='year'>${phrase.year}</span>`;
   }
     `</p>`
-  document.getElementById('quote-box').innerHTML = html;
+ 
+    document.getElementById('quote-box').innerHTML = html;
 
   }
-
-
-
 
 /***
  * click event listener for the print quote button
