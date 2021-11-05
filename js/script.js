@@ -1,11 +1,7 @@
 /******************************************
-Treehouse FSJS Techdegree:
+Treehouse FSJS Techdegree: Alex Szczerba
 project 1 - A Random Quote Generator
 ******************************************/
-
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
@@ -72,19 +68,20 @@ function printQuote() {
     <p class='quote'>${phrase.quote}</p>
     <p class='source'>${phrase.source}
   `;
-//conditional statement to add citation and year
+//  conditional statement to add citation to HTML
   if (phrase.citation) {
     html += `<span class='citation'>${phrase.citation}</span>`;
   }
+//  conditional statement to add year to HTML
   if (phrase.year) {
     html += `<span class='year'>${phrase.year}</span>`;
   }
     `</p>`
  
     document.getElementById('quote-box').innerHTML = html;
-
   }
 
+  setInterval(printQuote, 5000);
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
