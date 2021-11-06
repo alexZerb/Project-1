@@ -33,7 +33,6 @@ const quotes = [
     quote: 'When you start to love yourself for the first time, when you start to truly emrace who you are - flaws and all - your scars start to look a lot more like beauty marks', 
     source: 'SISSY', 
     citation: 'Jacob Tobia',
-    genre: 'Memoir',
   },
   {
     quote: `What's the point of having a voice if you're gonna be silent in those moments you shouldn't be?`, 
@@ -69,21 +68,15 @@ function getRandomQuote() {
   let randomQuote = Math.floor(Math.random() * quotes.length);
   return quotes[randomQuote];
 } 
-/*function getColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#'
-    for(i = 0; i < 6; i++){
-      color += letters[Math.floor(Math.random * 15)];
-      return color;
-    }
 
-}
-*/
+/***
+ * `getRandomColor` extra credit
+***/
 function getRandomColor() {
-  var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+ // gets random color by getting random hexadecimal number converted to a string. 
+  var randomColor = '#'+Math.floor(Math.random()*16777216).toString(16);
   return randomColor;
 }
-document.body.style.backgroundColor = getRandomColor();
 
 /***
  * `printQuote` function displays a random quote via `getRandomQuote` function 
@@ -94,11 +87,11 @@ function printQuote() {
     <p class='quote'>${phrase.quote}</p>
     <p class='source'><b>${phrase.source}</b>
   `;
-//  adds citation to HTML
+//  adds citation if available
   if (phrase.citation) {
     html += `<span class='citation'>${phrase.citation}</span>`;
   }
-//  adds year to HTML
+//  adds year if available
   if (phrase.year) {
     html += `<span class='year'>${phrase.year}</span>`;
   }
@@ -109,6 +102,8 @@ function printQuote() {
     `</p>`
  // displays new HTML inside 'quote-box'
     document.getElementById('quote-box').innerHTML = html;
+ // changes color each time a new quote is displayed
+    document.body.style.backgroundColor = getRandomColor();
   }
 // get new quote/new color every 5000 miliseconds
   setInterval(printQuote, 5000);
