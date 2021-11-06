@@ -69,11 +69,28 @@ function getRandomQuote() {
   let randomQuote = Math.floor(Math.random() * quotes.length);
   return quotes[randomQuote];
 } 
-
-function getColor() {
-
+/*function getColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#'
+    for(i = 0; i < 6; i++){
+      color += letters[Math.floor(Math.random * 15)];
+      return color;
+    }
 
 }
+*/
+const arrayOfColorFunctions = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'a', 'b', 'c', 'd', 'e', 'f',];
+let randomColor = '#';
+
+function getColor(){
+  for(let i = 0, i < 6, i++) {
+    let index = Math.floor((Math.random() + 1) * 16);
+    let value = arrayOfColorFunctions[index];
+
+    randomColor += value;
+  }
+}
+
 /***
  * `printQuote` function displays a random quote via `getRandomQuote` function 
 ***/
