@@ -79,17 +79,11 @@ function getRandomQuote() {
 
 }
 */
-const arrayOfColorFunctions = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'a', 'b', 'c', 'd', 'e', 'f',];
-let randomColor = '#';
-
-function getColor(){
-  for(let i = 0, i < 6, i++) {
-    let index = Math.floor((Math.random() + 1) * 16);
-    let value = arrayOfColorFunctions[index];
-
-    randomColor += value;
-  }
+function getRandomColor() {
+  var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+  return randomColor;
 }
+document.body.style.backgroundColor = getRandomColor();
 
 /***
  * `printQuote` function displays a random quote via `getRandomQuote` function 
@@ -117,8 +111,8 @@ function printQuote() {
     document.getElementById('quote-box').innerHTML = html;
   }
 // get new quote/new color every 5000 miliseconds
-  setInterval(printQuote, 10000);
-  setInterval(getColor, 10000);
+  setInterval(printQuote, 5000);
+  setInterval(getRandomColor, 5000);
 
   /***
 * click event listener for the print quote button
