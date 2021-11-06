@@ -81,16 +81,17 @@ function printQuote() {
   let phrase = getRandomQuote(); 
   let html = `
     <p class='quote'>${phrase.quote}</p>
-    <p class='source'>${phrase.source}
+    <p class='source'><b>${phrase.source}</b>
   `;
-//  conditional statement to add citation to HTML
+//  adds citation to HTML
   if (phrase.citation) {
     html += `<span class='citation'>${phrase.citation}</span>`;
   }
-//  conditional statement to add year to HTML
+//  adds year to HTML
   if (phrase.year) {
     html += `<span class='year'>${phrase.year}</span>`;
   }
+  // adds genre if available
   if (phrase.genre) {
     html += `<span class='genre'>, ${phrase.genre}</span>`;
   }
@@ -98,7 +99,7 @@ function printQuote() {
  // displays new HTML inside 'quote-box'
     document.getElementById('quote-box').innerHTML = html;
   }
-// timers to get new quote/new color every 5000 miliseconds
+// get new quote/new color every 5000 miliseconds
   setInterval(printQuote, 10000);
   setInterval(getColor, 10000);
 
