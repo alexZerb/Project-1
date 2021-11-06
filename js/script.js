@@ -105,9 +105,9 @@ function printQuote() {
  // changes color each time a new quote is displayed
     document.body.style.backgroundColor = getRandomColor();
   }
-// get new quote/new color every 5000 miliseconds
-  setInterval(printQuote, 5000);
-  setInterval(getRandomColor, 5000);
+// get new quote/new color every 10 seconds
+  setInterval(printQuote, 10000);
+  setInterval(getRandomColor, 10000);
 
   /***
 * click event listener for the print quote button
